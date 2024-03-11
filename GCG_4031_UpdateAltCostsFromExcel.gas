@@ -1,0 +1,449 @@
+Program.Sub.ScreenSU.Start
+gui.UpdateALT_COST..create
+gui.UpdateALT_COST..caption("ALT_COST Update w/ Excel")
+gui.UpdateALT_COST..size(4410,4950)
+gui.UpdateALT_COST..minx(0)
+gui.UpdateALT_COST..miny(0)
+gui.UpdateALT_COST..position(0,0)
+gui.UpdateALT_COST..event(unload,Unload_UpdateALT_COST_frm)
+gui.UpdateALT_COST..alwaysontop(False)
+gui.UpdateALT_COST..fontname("Arial")
+gui.UpdateALT_COST..fontsize(8)
+gui.UpdateALT_COST..forecolor(0)
+gui.UpdateALT_COST..fontstyle(False,False,False,False,)
+gui.UpdateALT_COST..BackColor(-2147483633)
+gui.UpdateALT_COST..controlbox(True)
+gui.UpdateALT_COST..maxbutton(False)
+gui.UpdateALT_COST..minbutton(False)
+gui.UpdateALT_COST..mousepointer(0)
+gui.UpdateALT_COST..moveable(True)
+gui.UpdateALT_COST..sizeable(False)
+gui.UpdateALT_COST..ShowInTaskBar(True)
+gui.UpdateALT_COST..titlebar(True)
+gui.UpdateALT_COST.frameExport.create(frame)
+gui.UpdateALT_COST.frameExport.caption("Export To Excel")
+gui.UpdateALT_COST.frameExport.size(3810,2265)
+gui.UpdateALT_COST.frameExport.position(200,1025)
+gui.UpdateALT_COST.frameExport.visible(True)
+gui.UpdateALT_COST.frameExport.fontname("Arial")
+gui.UpdateALT_COST.frameExport.fontsize(8)
+gui.UpdateALT_COST.frameImport.create(frame)
+gui.UpdateALT_COST.frameImport.caption("Import From Excel")
+gui.UpdateALT_COST.frameImport.size(3810,855)
+gui.UpdateALT_COST.frameImport.position(190,3355)
+gui.UpdateALT_COST.frameImport.visible(True)
+gui.UpdateALT_COST.frameImport.fontname("Arial")
+gui.UpdateALT_COST.frameImport.fontsize(8)
+gui.UpdateALT_COST.lblPL.create(label,"Product Line",True,930,255,1,185,880,True,0,Arial,8,-2147483633,0)
+gui.UpdateALT_COST.lblPL.parent("frameexport")
+gui.UpdateALT_COST.lblPL.defaultvalue("")
+gui.UpdateALT_COST.lblPL.controlgroup(0)
+gui.UpdateALT_COST.cmdExportToExcel.create(button)
+gui.UpdateALT_COST.cmdExportToExcel.caption("Export To Excel")
+gui.UpdateALT_COST.cmdExportToExcel.visible(True)
+gui.UpdateALT_COST.cmdExportToExcel.size(1920,375)
+gui.UpdateALT_COST.cmdExportToExcel.zorder(0)
+gui.UpdateALT_COST.cmdExportToExcel.position(145,1700)
+gui.UpdateALT_COST.cmdExportToExcel.enabled(True)
+gui.UpdateALT_COST.cmdExportToExcel.parent("frameexport")
+gui.UpdateALT_COST.cmdExportToExcel.fontname("Arial")
+gui.UpdateALT_COST.cmdExportToExcel.fontsize(8)
+gui.UpdateALT_COST.cmdExportToExcel.event(click,cmdExportToExcel_Click)
+gui.UpdateALT_COST.cmdExportToExcel.defaultvalue("")
+gui.UpdateALT_COST.cmdExportToExcel.controlgroup(0)
+gui.UpdateALT_COST.cmdUpdateFromExcel.create(button)
+gui.UpdateALT_COST.cmdUpdateFromExcel.caption("Import From Excel")
+gui.UpdateALT_COST.cmdUpdateFromExcel.visible(True)
+gui.UpdateALT_COST.cmdUpdateFromExcel.size(2220,375)
+gui.UpdateALT_COST.cmdUpdateFromExcel.zorder(0)
+gui.UpdateALT_COST.cmdUpdateFromExcel.position(145,305)
+gui.UpdateALT_COST.cmdUpdateFromExcel.enabled(True)
+gui.UpdateALT_COST.cmdUpdateFromExcel.parent("frameimport")
+gui.UpdateALT_COST.cmdUpdateFromExcel.fontname("Arial")
+gui.UpdateALT_COST.cmdUpdateFromExcel.fontsize(8)
+gui.UpdateALT_COST.cmdUpdateFromExcel.event(click,cmdUpdateFromExcel_Click)
+gui.UpdateALT_COST.cmdUpdateFromExcel.defaultvalue("")
+gui.UpdateALT_COST.cmdUpdateFromExcel.controlgroup(0)
+gui.UpdateALT_COST.ddlPL.create(dropdownlist)
+gui.UpdateALT_COST.ddlPL.visible(True)
+gui.UpdateALT_COST.ddlPL.size(1200,330)
+gui.UpdateALT_COST.ddlPL.zorder(0)
+gui.UpdateALT_COST.ddlPL.position(160,1130)
+gui.UpdateALT_COST.ddlPL.enabled(True)
+gui.UpdateALT_COST.ddlPL.parent("frameexport")
+gui.UpdateALT_COST.ddlPL.fontname("Arial")
+gui.UpdateALT_COST.ddlPL.fontsize(8)
+gui.UpdateALT_COST.ddlPL.defaultvalue("")
+gui.UpdateALT_COST.ddlPL.controlgroup(0)
+gui.UpdateALT_COST.lbl2.create(label,"",,0,0,1,0,0,True,0,,8,0,0)
+gui.UpdateALT_COST.lbl2.parent("frameexport")
+gui.UpdateALT_COST.lbl2.defaultvalue("")
+gui.UpdateALT_COST.lbl2.controlgroup(0)
+gui.UpdateALT_COST.lbl4.create(label,"The file will open automatically after clicking Export To Excel.",True,3405,405,1,185,290,True,0,Arial,8,-2147483633,0)
+gui.UpdateALT_COST.lbl4.parent("frameexport")
+gui.UpdateALT_COST.lbl4.defaultvalue("")
+gui.UpdateALT_COST.lbl4.controlgroup(0)
+gui.UpdateALT_COST.cmdFileLocation.create(button)
+gui.UpdateALT_COST.cmdFileLocation.caption("Change")
+gui.UpdateALT_COST.cmdFileLocation.visible(True)
+gui.UpdateALT_COST.cmdFileLocation.size(885,375)
+gui.UpdateALT_COST.cmdFileLocation.zorder(0)
+gui.UpdateALT_COST.cmdFileLocation.position(3100,375)
+gui.UpdateALT_COST.cmdFileLocation.enabled(True)
+gui.UpdateALT_COST.cmdFileLocation.fontname("Arial")
+gui.UpdateALT_COST.cmdFileLocation.fontsize(8)
+gui.UpdateALT_COST.cmdFileLocation.event(click,cmdfilelocation_click)
+gui.UpdateALT_COST.cmdFileLocation.defaultvalue("")
+gui.UpdateALT_COST.cmdFileLocation.controlgroup(0)
+gui.UpdateALT_COST.txtFileLocation.create(textbox,"",True,2925,300,0,185,425,False,0,Arial,8,-2147483643,1)
+gui.UpdateALT_COST.txtFileLocation.defaultvalue("")
+gui.UpdateALT_COST.txtFileLocation.controlgroup(0)
+gui.UpdateALT_COST.lbl8.create(label,"Excel File Location",True,1935,255,1,200,200,True,0,Arial,8,-2147483633,0)
+gui.UpdateALT_COST.lbl8.defaultvalue("")
+gui.UpdateALT_COST.lbl8.controlgroup(0)
+gui.UpdateALT_COST.ddlCodeSort.create(dropdownlist)
+gui.UpdateALT_COST.ddlCodeSort.visible(True)
+gui.UpdateALT_COST.ddlCodeSort.size(1455,330)
+gui.UpdateALT_COST.ddlCodeSort.zorder(0)
+gui.UpdateALT_COST.ddlCodeSort.position(1820,1130)
+gui.UpdateALT_COST.ddlCodeSort.enabled(True)
+gui.UpdateALT_COST.ddlCodeSort.parent("frameexport")
+gui.UpdateALT_COST.ddlCodeSort.fontname("Arial")
+gui.UpdateALT_COST.ddlCodeSort.fontsize(8)
+gui.UpdateALT_COST.ddlCodeSort.defaultvalue("")
+gui.UpdateALT_COST.ddlCodeSort.controlgroup(0)
+gui.UpdateALT_COST.lbl5.create(label,"Sort Code",True,1935,255,1,1830,890,True,0,Arial,8,-2147483633,0)
+gui.UpdateALT_COST.lbl5.parent("frameexport")
+gui.UpdateALT_COST.lbl5.defaultvalue("")
+gui.UpdateALT_COST.lbl5.controlgroup(0)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Variable.Global.sExcelFile.Declare(String)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+
+
+
+'This will be where our Excel file lives.
+F.Intrinsic.String.Concat(V.Caller.TempDir,"\UpdateAltCost.xlsx",V.Global.sExcelFile)
+Gui.UpdateALT_COST.txtFileLocation.Text(V.Global.sExcelFile)
+
+V.Local.sCon.Declare(String)
+'Remove _ if it is not within your DSNs.
+F.Intrinsic.String.Concat("Global_",V.Caller.CompanyCode,V.Local.sCon)
+F.ODBC.Connection!Conn.OpenConnection(V.Local.sCon,V.Ambient.PUser,V.Ambient.PPass)
+
+'Populate our PL DropDownList
+Gui.UpdateALT_COST.ddlPL.AddItem("All",0)
+F.ODBC.Connection!Conn.OpenLocalRecordsetRO("RSPL","select DISTINCT PRODUCT_LINE from INVENTORY_MSTR order by PRODUCT_LINE")
+	F.Intrinsic.Control.DoUntil(V.ODBC.Conn!RSPL.EOF,"=",True)
+		Gui.UpdateALT_COST.ddlPL.AddItem(V.ODBC.Conn!RSPL.FieldVal!PRODUCT_LINE)
+		F.ODBC.Conn!RSPL.MoveNext
+	F.Intrinsic.Control.Loop
+F.ODBC.Conn!RSPL.Close
+
+'Populate our Sort Code DropDownList
+Gui.UpdateALT_COST.ddlCodeSort.AddItem("All",0)
+F.ODBC.Connection!Conn.OpenLocalRecordsetRO("RSCS","select DISTINCT CODE_SORT from INVENTORY_MSTR order by CODE_SORT")
+	F.Intrinsic.Control.DoUntil(V.ODBC.Conn!RSCS.EOF,"=",True)
+		Gui.UpdateALT_COST.ddlCodeSort.AddItem(V.ODBC.Conn!RSCS.FieldVal!CODE_SORT)
+		F.ODBC.Conn!RSCS.MoveNext
+	F.Intrinsic.Control.Loop
+F.ODBC.Conn!RSCS.Close
+
+Gui.UpdateALT_COST..Show
+
+
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4031_UpdateAltCostsFromExcel.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+Program.Sub.Unload_UpdateALT_COST_frm.Start
+
+F.ODBC.Connection!Conn.Close
+F.Intrinsic.Control.End
+
+Program.Sub.Unload_UpdateALT_COST_frm.End
+
+program.sub.cmdfilelocation_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdfilelocation_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+
+
+
+V.Local.sFileLocation.Declare(String)
+F.Intrinsic.UI.ShowSaveFileDialog(V.Global.sExcelFile,"*.xlsx",V.Local.sFileLocation)
+
+F.Intrinsic.Control.If(V.Local.sFileLocation,"=","***CANCEL***")
+	'do nothing if was cancelled
+F.Intrinsic.Control.Else
+	Gui.UpdateALT_COST.txtFileLocation.Text(V.Local.sFileLocation)
+	V.Global.sExcelFile.Set(V.Local.sFileLocation)
+F.Intrinsic.Control.EndIf
+
+
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdfilelocation_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project:GCG_4031_UpdateAltCostsFromExcel.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdfilelocation_click.end
+
+Program.Sub.cmdUpdateFromExcel_Click.Start
+
+F.Intrinsic.Control.SetErrorHandler("cmdUpdateFromExcel_Click_New_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+
+
+
+'Check to see if the file selected exists.  If it doesn't, let user know and exit sub.
+V.Local.bFileExists.Declare(Boolean)
+F.Intrinsic.File.Exists(V.Global.sExcelFile,V.Local.bFileExists)
+F.Intrinsic.Control.If(V.Local.bFileExists,"<>",True)
+	'If the file selected doesn't exist, there's nothing to import.  Exit.
+	F.Intrinsic.UI.Msgbox("The file selected does not exist.  Cannot import files that don't exist.  Please choose a real file.","Error 404: File Not Found")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Counters
+V.Local.iR.Declare(Long)
+'Total Rows
+V.Local.iTotalRows.Declare(Long)
+
+'Obligatory Wait Dialog
+F.Intrinsic.UI.InvokeWaitDialog("Reading Excel File...","Importing From Excel...")
+
+'Load/Read Excel file from disk
+F.Automation.MSExcel.CreateAppObject("gsExcel")
+F.Automation.MSExcel.OpenWorkbook("gsExcel","gsWorkBook",V.Global.sExcelFile)
+F.Automation.MSExcel.OpenWorksheet("gsWorkBook","gsSheet1",1)
+
+'Open up the wait dialog, and set the iTotalRows to the total number of rows that we're going to be processing
+F.Intrinsic.UI.InvokeWaitDialog("Counting Rows...","Importing From Excel...")
+F.Automation.MSExcel.RowCount("gsSheet1",V.Local.iTotalRows)
+F.Intrinsic.Math.Add(V.Local.iTotalRows,-1,V.Local.iTotalRows)
+
+'Start with first row
+F.Intrinsic.Control.For(V.Local.iR,2,V.Local.iTotalRows,1)
+		
+		'Change the wait dialog....  lets us know that the script isn't just hung up.
+		V.Local.sStatus.Declare(String)
+		F.Intrinsic.String.Concat("Updating row ",V.Local.iR," out of ",V.Local.iTotalRows,"...",V.Local.sStatus)
+		F.Intrinsic.UI.ChangeWaitStatus(V.Local.sStatus,V.Local.iR,0,V.Local.iTotalRows)
+		
+		'This is here because I have encountered single quotes / apostrophe's ( ' ) and it causes the SQL commands/queries to bomb unless they are escaped.
+		'Also, can't just to a global replace because then we destroy the SQL statement.  Then there is the whole "excel reads your cells however it wants to" thing...
+		V.Local.sPartClean.Declare(String)
+		F.Automation.MSExcel.ReadCell("gsSheet1",V.Local.iR,1,V.Local.sPartClean)
+		F.Intrinsic.String.Replace(V.Local.sPartClean,"'","''",V.Local.sPartClean)
+		
+		V.Local.sLocationClean.Declare(String)
+		F.Automation.MSExcel.ReadCell("gsSheet1",V.Local.iR,2,V.Local.sLocationClean)
+		F.Intrinsic.String.Replace(V.Local.sLocationClean,"'","''",V.Local.sLocationClean)
+		
+		V.Local.sAmtAltCostClean.Declare(String)
+		F.Automation.MSExcel.ReadCell("gsSheet1",V.Local.iR,6,V.Local.sAmtAltCostClean)
+		F.Intrinsic.String.Replace(V.Local.sAmtAltCostClean,"'","''",V.Local.sAmtAltCostClean)
+			
+		'Prepare SQL command
+		V.Local.sSQL.Declare(String)
+		V.Local.sSQL.Set("UPDATE INVENTORY_MSTR SET AMT_ALT_COST=':AMT_ALT_COST' WHERE PART=':PART' AND LOCATION=':LOCATION'")
+		F.Intrinsic.String.Replace(V.Local.sSQL,":AMT_ALT_COST",V.Local.sAmtAltCostClean,V.Local.sSQL)
+		F.Intrinsic.String.Replace(V.Local.sSQL,":PART",V.Local.sPartClean,V.Local.sSQL)
+		F.Intrinsic.String.Replace(V.Local.sSQL,":LOCATION",V.Local.sLocationClean,V.Local.sSQL)
+		
+		'Execute V.Local.sSQL
+		F.ODBC.Connection!Conn.Execute(V.Local.sSQL)
+	
+F.Intrinsic.Control.Next(V.Local.iR)
+
+'Destroy objects like a good little workerbee :)
+F.Automation.MSExcel.DestroyAllObjects("gsExcel","gsWorkBook","gsSheet1")
+		
+F.Intrinsic.UI.CloseWaitDialog
+
+
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdUpdateFromExcel_Click_New_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4031_UpdateAltCostsFromExcel.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+
+Program.Sub.cmdUpdateFromExcel_Click.End
+
+Program.Sub.cmdExportToExcel_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdExportToExcel_Click_New_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+
+
+
+'Prepare our SQL query.
+V.Local.sSQL.Declare(String)
+V.Local.sSQL.Set("select PART, LOCATION, PRODUCT_LINE, CODE_SORT, DESCRIPTION, AMT_ALT_COST from INVENTORY_MSTR")
+'If the PL combobox is "All", do nothing.  Otherwise, adjust SQL query
+F.Intrinsic.Control.If(V.Screen.UpdateALT_COST!ddlPL.Text,"<>","All")
+	F.Intrinsic.Control.If(V.Screen.UpdateALT_COST!ddlPL.ListIndex,"<>",0)
+		F.Intrinsic.String.Concat(V.Local.sSQL," where PRODUCT_LINE='",V.Screen.UpdateALT_COST!ddlPL.Text,"'",V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+'finish SQL query with an ORDER BY clause (sorting)
+V.Local.sSQL.Append(" order by PART, LOCATION, PRODUCT_LINE, CODE_SORT, DESCRIPTION, AMT_ALT_COST")
+
+'A Count of records matching this criteria...
+V.Local.iCurrentRecord.Declare(Long)
+V.Local.iTotalRecords.Declare(Long)
+V.Local.sSQL2.Declare(String)
+F.Intrinsic.String.Replace(V.Local.sSQL,"select PART, LOCATION, PRODUCT_LINE, CODE_SORT, DESCRIPTION, AMT_ALT_COST","select COUNT(*) AS iTotalRecords",V.Local.sSQL2)
+F.Intrinsic.String.Replace(V.Local.sSQL2," order by PART, LOCATION, PRODUCT_LINE, CODE_SORT, DESCRIPTION, AMT_ALT_COST","",V.Local.sSQL2)
+
+F.ODBC.Connection!Conn.OpenLocalRecordsetRO("RSCount",V.Local.sSQL2)
+	F.Intrinsic.Control.If(Variable.ODBC.Conn!RSCount.EOF,"=",False)
+		V.Local.iTotalRecords.Set(Variable.ODBC.Conn!RSCount.FieldVal!iTotalRecords)
+	F.Intrinsic.Control.EndIf
+F.ODBC.Conn!RSCount.Close
+
+'Open or Create file for writing...
+F.Automation.MSExcel.CreateAppObject("gsExcel")
+'Check to see if the file selected exists.  If it doesn't, let user know and exit sub.
+V.Local.bFileExists.Declare(Boolean)
+F.Intrinsic.File.Exists(V.Global.sExcelFile,V.Local.bFileExists)
+F.Intrinsic.Control.If(V.Local.bFileExists,"=",True)
+	'If the file selected doesn't exist, there's nothing to import.  Exit.
+	F.Automation.MSExcel.OpenWorkbook("gsExcel","gsWorkBook",V.Global.sExcelFile)
+	F.Automation.MSExcel.OpenWorksheet("gsWorkBook","gsSheet1",1)
+F.Intrinsic.Control.Else
+	F.Automation.MSExcel.CreateWorkbook("gsExcel","gsWorkBook",V.Global.sExcelFile)
+	F.Automation.MSExcel.CreateWorksheet("gsWorkBook","gsSheet1","GS Sheet 1")
+F.Intrinsic.Control.EndIf
+
+'I am a firm believer in giving the user feedback that something is happening...
+'You know...  so they don't think that everthing is frozen.
+F.Intrinsic.UI.InvokeWaitDialog("Exporting all parts to Excel.","Exporting To Excel...")
+
+F.ODBC.Connection!Conn.OpenLocalRecordsetRO("RSIM",V.Local.sSQL)
+F.Intrinsic.Control.DoUntil(V.ODBC.Conn!RSIM.EOF,"=",True)
+	
+	'Increment our counter
+	F.Intrinsic.Math.Add(V.Local.iCurrentRecord,1,V.Local.iCurrentRecord)
+	
+	F.Intrinsic.Control.If(V.Local.iCurrentRecord,"=",1)
+		'First time thru, create headers
+		F.Intrinsic.UI.ChangeWaitStatus("Adding headers...")
+		F.Automation.MSExcel.WriteCell("gsSheet1",V.Local.iCurrentRecord,1,"PART")
+		F.Automation.MSExcel.WriteCell("gsSheet1",V.Local.iCurrentRecord,2,"LOCATION")
+		F.Automation.MSExcel.WriteCell("gsSheet1",V.Local.iCurrentRecord,3,"PRODUCT_LINE")
+		F.Automation.MSExcel.WriteCell("gsSheet1",V.Local.iCurrentRecord,4,"CODE_SORT")
+		F.Automation.MSExcel.WriteCell("gsSheet1",V.Local.iCurrentRecord,5,"DESCRIPTION")
+		F.Automation.MSExcel.WriteCell("gsSheet1",V.Local.iCurrentRecord,6,"AMT_ALT_COST")
+		
+	F.Intrinsic.Control.Else
+		'Update progress dialog
+		F.Intrinsic.UI.ChangeWaitStatus(V.ODBC.Conn!RSIM.FieldVal!PART,V.Local.iCurrentRecord,0,V.Local.iTotalRecords)
+		
+		'Add row/cells
+		F.Automation.MSExcel.FormatCell("gsSheet1",V.Local.iCurrentRecord,1,"@")
+		F.Automation.MSExcel.WriteCell("gsSheet1",V.Local.iCurrentRecord,1,V.ODBC.Conn!RSIM.FieldVal!PART)
+		F.Automation.MSExcel.WriteCell("gsSheet1",V.Local.iCurrentRecord,2,V.ODBC.Conn!RSIM.FieldVal!LOCATION)
+		F.Automation.MSExcel.WriteCell("gsSheet1",V.Local.iCurrentRecord,3,V.ODBC.Conn!RSIM.FieldVal!PRODUCT_LINE)
+		F.Automation.MSExcel.WriteCell("gsSheet1",V.Local.iCurrentRecord,4,V.ODBC.Conn!RSIM.FieldVal!CODE_SORT)
+		F.Automation.MSExcel.WriteCell("gsSheet1",V.Local.iCurrentRecord,5,V.ODBC.Conn!RSIM.FieldVal!DESCRIPTION)
+		F.Automation.MSExcel.WriteCell("gsSheet1",V.Local.iCurrentRecord,6,V.ODBC.Conn!RSIM.FieldVal!AMT_ALT_COST)
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.Conn!RSIM.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.Conn!RSIM.Close
+
+F.Automation.MSExcel.SaveWorkbook("gsWorkBook")
+
+F.Automation.MSExcel.DestroyAllObjects("gsExcel","gsWorkBook","gsSheet1")
+
+F.Intrinsic.UI.CloseWaitDialog
+
+'Launch the file in Excel so the user can do what they need to do.
+F.Intrinsic.Task.ShellExec("","open",V.Global.sExcelFile,"",V.Caller.TempDir,1)
+
+
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdExportToExcel_Click_New_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4031_UpdateAltCostsFromExcel.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdExportToExcel_Click.End
+
+Program.Sub.Comments.Start
+${$0$}$UpdateAltCostsByPL$}$JWithrow$}$5/17/2013
+${$3$}$0$}$$}$-1$}$-1$}$$}$1/1/1900$}$Need to update the alt cost field in the inventory master from a spreadsheet.  Key fields would be part & loc.
+Here is the a sample of the spreadsheet that would be exported from Excel.
+The customer updates alternate cost pricing quarterly and needs to mass update the alt cost field.
+The alt cost field would need to be updated only.  No other fields will be updated.
+
+Start program, select PL, export to Excel
+Open Excel that was just created
+Upon close, update INVENTORY_MSTR.ALT_COST based on key PART, LOC, PL
+
+GAB_UpdtAltCost_Log
+CREATE TABLE "GAB_UpdtAltCost_Log"(
+ "PART" CHAR(20) NOT NULL ,
+ "LOC" CHAR(6) NOT NULL ,
+ "PL" CHAR(4) NOT NULL ,
+ "Original_ALT_COST" DECIMAL(8,2) NOT NULL ,
+ "New_ALT_COST" DECIMAL(8,2) NOT NULL ,
+ "CREATEDBY" CHAR(12) NOT NULL ,
+ "CREATEDON" DATETIME DEFAULT NOW() NOT NULL );
+Program.Sub.Comments.End
+
